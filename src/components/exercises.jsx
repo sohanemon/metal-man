@@ -9,8 +9,13 @@ const Exercises = () => {
 
     return () => {};
   }, []);
-  console.log(exercises);
-  return <div></div>;
+  return (
+    <div>
+      {exercises.map((el) => (
+        <img src={el.image} alt='' />
+      ))}
+    </div>
+  );
 };
 
 export default Exercises;
