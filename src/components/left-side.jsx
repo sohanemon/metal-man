@@ -3,7 +3,7 @@ import Exercises from "./exercises";
 
 function LeftSide() {
   return (
-    <div className='col-span-9 bg-blue-gray-50 p-10'>
+    <div className='lg:col-span-9 col-span-full bg-blue-gray-50 p-10'>
       <header className=' font-semibold p-4'>
         <Typography variant='h1' color='blue-gray' textGradient>
           Metal Man Club

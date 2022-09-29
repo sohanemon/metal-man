@@ -6,15 +6,15 @@ import User from "./user";
 const RightSide = () => {
   const [breakTime, setBreakTime] = useState(45);
   return (
-    <div className='col-span-3 p-4 md:p-8 sticky top-0 h-screen text-gray-900'>
+    <div className='lg:col-span-3 col-span-full p-4 lg:p-8 lg:sticky top-0 h-screen text-gray-900 order-first lg:order-1'>
       <User />
-      <div className='flex flex-col md:flex-row justify-between bg-blue-gray-50 px-5 py-2 rounded-lg my-7'>
+      <div className='flex justify-evenly  lg:justify-between bg-blue-gray-50 px-5 py-2 rounded-lg my-7'>
         {about.map((el) => (
           <About {...el} key={el.id} />
         ))}
       </div>
       <h1 className='font-semibold'>Add a break</h1>
-      <div className='flex flex-col items-center md:flex-row justify-between px-4 py-3 my-7 bg-blue-gray-50 rounded-lg'>
+      <div className='flex  items-center  justify-between px-4 py-3 my-7 bg-blue-gray-50 rounded-lg'>
         {timeout.map((el) => (
           <TimeButton
             clicked={breakTime}
