@@ -11,7 +11,7 @@ const Exercises = () => {
     return () => {};
   }, []);
   return (
-    <div className='grid grid-cols-3 gap-6'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
       {exercises.map((el) => (
         <ExerciseCard {...el} key={el.id} />
       ))}

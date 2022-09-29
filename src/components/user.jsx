@@ -9,8 +9,8 @@ function User() {
         alt='avatar'
         variant='circular'
       />
-      <div>
-        <p className='w-max font-semibold text-gray-900 text-xl'>Sohan Emon</p>
+      <div className='hidden md:block '>
+        <p className='w-max font-semibold text-gray-900 text-xl '>Sohan Emon</p>
         <p className='text-gray-700 text-sm w-max flex items-center'>
           <ImLocation2 />
           Jhenaidaha, Bangladesh

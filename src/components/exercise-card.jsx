@@ -21,7 +21,6 @@ export default function ExerciseCard({
 }) {
   const { setExerciseTime } = useContext(ExerciseTime);
   const handleAddToList = () => {
-    console.log("first");
     setExerciseTime((p) => p + requiredTime);
   };
 
