@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(79, 91, 107);
+  border-radius: 15px;
+}
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
