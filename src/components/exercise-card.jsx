@@ -26,6 +26,7 @@ export default function ExerciseCard({
   const handleAddToList = () => {
     toast.success("Successfully Added", {
       closeButton: false,
+      autoClose: 1000,
       position: "bottom-right",
       progressClassName: "!bg-blue-gray-500",
       icon: <MdBookmarkAdded className='text-3xl text-blue-gray-700' />,

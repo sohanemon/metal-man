@@ -1,6 +1,5 @@
 import { Button } from "@material-tailwind/react";
 import { useContext, useState } from "react";
-import { MdCelebration } from "react-icons/md";
 import { toast } from "react-toastify";
 import { ExerciseTime } from "../App";
 import {
@@ -111,11 +110,13 @@ function Details({ breakTime }) {
       <h1 className='font-semibold'>Exercise Details</h1>
       <div className={divStyle}>
         <p className='font-semibold'>Exercise time</p>
-        <span className='text-gray-600'>{exerciseTime} seconds</span>
+        <span className='text-gray-600'>{exerciseTime || 0} seconds</span>
       </div>
       <div className={divStyle}>
         <p className='font-semibold'>Break time</p>
-        <span className='text-gray-600'>{breakTime} seconds</span>
+        <span className='text-gray-600'>
+          {breakTime || "Not configured"} {breakTime ? "seconds" : null}
+        </span>
       </div>
     </>
   );

@@ -3,18 +3,33 @@ import { Typography } from "@material-tailwind/react";
 import Exercises from "./exercises";
 import MyAccordion from "./accordion";
 import Footer from "./footer";
+import { useEffect, useState } from "react";
 
 function LeftSide() {
+  const [width, setWidth] = useState();
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
   return (
     <div className='lg:col-span-9 col-span-full bg-blue-gray-50 p-10'>
       <header className=' font-semibold p-4'>
         <div className='flex items-center relative w-max'>
-          <Typography variant='h1' color='blue-gray' textGradient>
+          <Typography
+            variant={`${width > 500 ? "h1" : "h5"}`}
+            color='blue-gray'
+            textGradient
+          >
             Metal Man Club
           </Typography>
-          <TbBarbell className='text-6xl  absolute left-[8rem] -top-10 text-blue-gray-500' />
+          <TbBarbell
+            className={`${
+              width > 500
+                ? "text-6xl left-[8rem] -top-10"
+                : "text-3xl left-[50px] -top-[20px] "
+            }  absolute  text-blue-gray-500`}
+          />
         </div>
-        <Typography color='gray' variant='h4'>
+        <Typography variant={`${width > 500 ? "h4" : "h6"}`} color='gray'>
           Select todays exercises
         </Typography>
       </header>
@@ -23,6 +38,8 @@ function LeftSide() {
         Q/A Section
       </h1>
       <MyAccordion />
+      <br />
+      <br />
       <Footer />
     </div>
   );
