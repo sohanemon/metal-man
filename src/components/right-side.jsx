@@ -61,7 +61,7 @@ const timeout = [
 const about = [
   {
     id: 1,
-    value: 75,
+    value: 62,
     unit: "kg",
     type: "weight",
   },
