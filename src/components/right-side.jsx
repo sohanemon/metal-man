@@ -88,10 +88,10 @@ function TimeButton({ time, clicked, setClicked }) {
   return (
     <button
       onClick={handleClick}
-      className={`rounded-full font-semibold text-sm hover:bg-blue-gray-50  h-10 w-10 grid place-content-center ${
+      className={`rounded-full font-semibold text-sm  h-10 w-10 grid place-content-center ${
         clicked === time
           ? "text-white bg-blue-gray-600 hover:bg-blue-gray-600"
-          : null
+          : "text-gray-900 bg-white hover:bg-white"
       }`}
       key={time}
     >
@@ -114,9 +114,7 @@ function Details({ breakTime }) {
       </div>
       <div className={divStyle}>
         <p className='font-semibold'>Break time</p>
-        <span className='text-gray-600'>
-          {breakTime || "Not configured"} {breakTime ? "seconds" : null}
-        </span>
+        <span className='text-gray-600'>{breakTime || 0} seconds</span>
       </div>
     </>
   );
