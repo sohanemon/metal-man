@@ -84,7 +84,6 @@ function TimeButton({ time, clicked, setClicked }) {
     setClicked(time);
     addBreakTimeToLS(time);
   };
-  console.log(typeof breakTime);
   return (
     <button
       onClick={handleClick}
