@@ -11,7 +11,7 @@ function App() {
       <div className='grid grid-cols-12'>
         <LeftSide />
         <RightSide />
-      </div>
+      </div>{" "}
       <ToastContainer />
     </ExerciseTime.Provider>
   );
