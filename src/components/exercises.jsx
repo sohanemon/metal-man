@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ExerciseCard from "./exercise-card";
 
 const Exercises = () => {
   const [exercises, setExercises] = useState([]);
@@ -10,9 +11,9 @@ const Exercises = () => {
     return () => {};
   }, []);
   return (
-    <div>
+    <div className='grid grid-cols-3'>
       {exercises.map((el) => (
-        <img src={el.image} alt='' />
+        <ExerciseCard {...el} key={el.id} />
       ))}
     </div>
   );
