@@ -11,7 +11,7 @@ function LeftSide() {
     setWidth(window.innerWidth);
   }, []);
   return (
-    <div className='lg:col-span-9 col-span-full bg-blue-gray-50 p-10'>
+    <div className='lg:col-span-8 xl:col-span-9 col-span-full sm:col-span-7 bg-blue-gray-50 p-10'>
       <header className=' font-semibold p-4'>
         <div className='flex items-center relative w-max'>
           <Typography
