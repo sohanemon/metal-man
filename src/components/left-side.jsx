@@ -1,7 +1,7 @@
 import { Typography } from "@material-tailwind/react";
 import Exercises from "./exercises";
 
-function LeftSide() {
+function LeftSide({}) {
   return (
     <div className='col-span-9 bg-blue-gray-50 p-10'>
       <header className=' font-semibold p-4'>

@@ -1,6 +1,5 @@
 import { Button } from "@material-tailwind/react";
-import { useContext, useState } from "react";
-import { ExerciseTime } from "../App";
+import { useState } from "react";
 import About from "./about";
 import User from "./user";
 const RightSide = () => {
@@ -79,7 +78,6 @@ function TimeButton({ time, clicked, setClicked }) {
 }
 
 function Details({ breakTime }) {
-  const { exerciseTime } = useContext(ExerciseTime);
   const divStyle =
     "flex justify-between p-3 tracking-wider my-4 bg-blue-gray-50 rounded-md text-sm";
   return (
@@ -87,7 +85,7 @@ function Details({ breakTime }) {
       <h1 className='font-semibold'>Exercise Details</h1>
       <div className={divStyle}>
         <p className='font-semibold'>Exercise time</p>
-        <span className='text-gray-600'>{exerciseTime} seconds</span>
+        <span className='text-gray-600'>200 seconds</span>
       </div>
       <div className={divStyle}>
         <p className='font-semibold'>Break time</p>

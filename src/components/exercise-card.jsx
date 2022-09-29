@@ -8,8 +8,8 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import { ExerciseTime } from "../App";
 import { useContext } from "react";
+import { ExerciseTime } from "../App";
 
 export default function ExerciseCard({
   image,
