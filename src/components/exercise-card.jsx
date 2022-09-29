@@ -37,9 +37,12 @@ export default function ExerciseCard({
         <Typography variant='h5' className='mb-2 line-clamp-1'>
           {title}
         </Typography>
-        <Typography variant='small' className='line-clamp-2 text-left'>
+        <Typography
+          variant='small'
+          className='line-clamp-2 block first-letter:!uppercase  text-left'
+        >
           {description}
-        </Typography>{" "}
+        </Typography>
       </CardBody>
       <CardFooter divider className='pt-0'>
         <div className='flex items-center justify-between py-3'>

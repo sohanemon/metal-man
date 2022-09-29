@@ -1,10 +1,15 @@
 import { Button } from "@material-tailwind/react";
 import { useContext, useState } from "react";
 import { ExerciseTime } from "../App";
+import {
+  addBreakTimeToLS,
+  getBreakTimeFromLS,
+} from "../utilities/local-storage";
 import About from "./about";
 import User from "./user";
 const RightSide = () => {
-  const [breakTime, setBreakTime] = useState(45);
+  const [breakTime, setBreakTime] = useState(getBreakTimeFromLS());
+
   return (
     <div className='lg:col-span-3 col-span-full p-4 lg:p-8 lg:sticky top-0 h-screen text-gray-900 order-first lg:order-1'>
       <User />
@@ -63,9 +68,14 @@ const about = [
 ];
 
 function TimeButton({ time, clicked, setClicked }) {
+  const handleClick = () => {
+    setClicked(time);
+    addBreakTimeToLS(time);
+  };
+  console.log(typeof breakTime);
   return (
     <button
-      onClick={() => setClicked(time)}
+      onClick={handleClick}
       className={`rounded-full font-semibold text-sm hover:bg-blue-gray-50  h-10 w-10 grid place-content-center ${
         clicked === time
           ? "text-white bg-blue-gray-600 hover:bg-blue-gray-600"
@@ -80,6 +90,7 @@ function TimeButton({ time, clicked, setClicked }) {
 
 function Details({ breakTime }) {
   const { exerciseTime } = useContext(ExerciseTime);
+
   const divStyle =
     "flex justify-between p-3 tracking-wider my-4 bg-blue-gray-50 rounded-md text-sm";
   return (
