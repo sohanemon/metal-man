@@ -12,7 +12,7 @@ const RightSide = () => {
   const [breakTime, setBreakTime] = useState(getBreakTimeFromLS());
 
   return (
-    <div className='lg:col-span-4 sm:col-span-5 xl:col-span-3 col-span-full p-4 lg:p-8 lg:sticky top-0 h-screen text-gray-900 order-first lg:order-1'>
+    <div className='lg:col-span-4 sm:col-span-5 xl:col-span-3 col-span-full p-4 lg:p-8 sm:sticky top-0 h-screen text-gray-900 order-first sm:order-1 lg:order-first xl:order-1 '>
       <User />
       <div className='flex justify-evenly  lg:justify-between bg-blue-gray-50 px-5 py-2 rounded-lg my-7'>
         {about.map((el) => (

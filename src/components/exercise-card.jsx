@@ -35,7 +35,7 @@ export default function ExerciseCard({
   };
 
   return (
-    <Card className=' my-10 relative'>
+    <Card className=' my-10 relative max-w-xs mx-auto'>
       <CardHeader className='relative h-32 !shadow-gray-500'>
         <img
           src={image}
