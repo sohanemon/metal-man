@@ -1,5 +1,7 @@
 import { Button } from "@material-tailwind/react";
 import { useContext, useState } from "react";
+import { MdCelebration } from "react-icons/md";
+import { toast } from "react-toastify";
 import { ExerciseTime } from "../App";
 import {
   addBreakTimeToLS,
@@ -30,7 +32,18 @@ const RightSide = () => {
         ))}
       </div>
       <Details breakTime={breakTime} />
-      <Button color='blue-gray' className='active:scale-x-95  w-full'>
+      <Button
+        onClick={() =>
+          toast.success("Congrats, Your are a Metal Man", {
+            position: "top-left",
+            hideProgressBar: true,
+            closeButton: false,
+            icon: "🎉",
+          })
+        }
+        color='blue-gray'
+        className='active:scale-x-95  w-full'
+      >
         Activity Completed
       </Button>
     </div>
