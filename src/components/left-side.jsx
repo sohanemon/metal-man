@@ -2,6 +2,7 @@ import { TbBarbell } from "react-icons/tb";
 import { Typography } from "@material-tailwind/react";
 import Exercises from "./exercises";
 import MyAccordion from "./accordion";
+import Footer from "./footer";
 
 function LeftSide() {
   return (
@@ -22,6 +23,7 @@ function LeftSide() {
         Q/A Section
       </h1>
       <MyAccordion />
+      <Footer />
     </div>
   );
 }
