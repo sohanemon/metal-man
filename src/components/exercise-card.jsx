@@ -8,6 +8,8 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import { ExerciseTime } from "../App";
+import { useContext } from "react";
 
 export default function ExerciseCard({
   image,
@@ -17,6 +19,12 @@ export default function ExerciseCard({
   minAge,
   maxAge,
 }) {
+  const { setExerciseTime } = useContext(ExerciseTime);
+  const handleAddToList = () => {
+    console.log("first");
+    setExerciseTime((p) => p + requiredTime);
+  };
+
   return (
     <Card className=' my-10 relative'>
       <CardHeader className='relative h-32 !shadow-gray-500'>
@@ -49,7 +57,11 @@ export default function ExerciseCard({
             {minAge}-{maxAge} ages
           </Typography>
         </div>{" "}
-        <Button color='blue-gray' className='active:scale-x-95 w-full '>
+        <Button
+          onClick={handleAddToList}
+          color='blue-gray'
+          className='active:scale-x-95 w-full '
+        >
           Add to list
         </Button>
       </CardFooter>
