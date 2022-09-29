@@ -6,6 +6,7 @@ import {
   CardBody,
   CardFooter,
   Typography,
+  Button,
 } from "@material-tailwind/react";
 
 export default function ExerciseCard({
@@ -17,33 +18,40 @@ export default function ExerciseCard({
   maxAge,
 }) {
   return (
-    <Card className='w-96 my-10 relative'>
-      <CardHeader color='blue' className='relative h-56'>
+    <Card className=' my-10 relative'>
+      <CardHeader className='relative h-32 !shadow-gray-500'>
         <img
           src={image}
           alt='img-blur-shadow'
-          className='h-full object-cover w-full'
+          className='h-full object-cover w-full object-center'
         />
       </CardHeader>
-      <CardBody className='text-center'>
+      <CardBody className='text-center pb-2'>
         <Typography variant='h5' className='mb-2 line-clamp-1'>
           {title}
         </Typography>
-        <Typography className='line-clamp-2'>{description}</Typography>
+        <Typography variant='small' className='line-clamp-2 text-left'>
+          {description}
+        </Typography>{" "}
       </CardBody>
-      <CardFooter divider className='flex items-center justify-between py-3'>
-        <Typography variant='small' className='flex items-center gap-1'>
-          <BiTimer className='text-2xl' />
-          {requiredTime}s
-        </Typography>
-        <Typography
-          variant='small'
-          color='gray'
-          className='flex items-center gap-1'
-        >
-          <FaBaby className='text-lg' />
-          {minAge}-{maxAge} ages
-        </Typography>
+      <CardFooter divider className='pt-0'>
+        <div className='flex items-center justify-between py-3'>
+          <Typography variant='small' className='flex items-center gap-1'>
+            <BiTimer className='text-2xl' />
+            {requiredTime}s
+          </Typography>{" "}
+          <Typography
+            variant='small'
+            color='gray'
+            className='flex items-center gap-1'
+          >
+            <FaBaby className='text-lg' />
+            {minAge}-{maxAge} ages
+          </Typography>
+        </div>{" "}
+        <Button color='blue-gray' className='w-full '>
+          Add to list
+        </Button>
       </CardFooter>
     </Card>
   );
