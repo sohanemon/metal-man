@@ -49,7 +49,7 @@ export default function ExerciseCard({
             {minAge}-{maxAge} ages
           </Typography>
         </div>{" "}
-        <Button color='blue-gray' className='w-full '>
+        <Button color='blue-gray' className='active:scale-x-95 w-full '>
           Add to list
         </Button>
       </CardFooter>

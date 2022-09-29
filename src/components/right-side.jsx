@@ -1,10 +1,11 @@
+import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import About from "./about";
 import User from "./user";
 const RightSide = () => {
-  const [clicked, setClicked] = useState(45);
+  const [breakTime, setBreakTime] = useState(45);
   return (
-    <div className='col-span-3 p-8 text-gray-900'>
+    <div className='col-span-3 p-8 sticky top-0 h-screen text-gray-900'>
       <User />
       <div className='flex justify-between bg-blue-gray-50 px-5 py-2 rounded-lg my-7'>
         {about.map((el) => (
@@ -15,13 +16,17 @@ const RightSide = () => {
       <div className='flex justify-between px-4 py-3 my-7 bg-blue-gray-50 rounded-lg'>
         {timeout.map((el) => (
           <TimeButton
-            clicked={clicked}
-            setClicked={setClicked}
+            clicked={breakTime}
+            setClicked={setBreakTime}
             {...el}
             key={el.time}
           />
         ))}
       </div>
+      <Details breakTime={breakTime} />
+      <Button color='blue-gray' className='active:scale-x-95  w-full'>
+        Activity Completed
+      </Button>
     </div>
   );
 };
@@ -69,5 +74,23 @@ function TimeButton({ time, clicked, setClicked }) {
     >
       {time}s
     </button>
+  );
+}
+
+function Details({ breakTime }) {
+  const divStyle =
+    "flex justify-between p-3 tracking-wider my-4 bg-blue-gray-50 rounded-md text-sm";
+  return (
+    <>
+      <h1 className='font-semibold'>Exercise Details</h1>
+      <div className={divStyle}>
+        <p className='font-semibold'>Exercise time</p>
+        <span className='text-gray-600'>200 seconds</span>
+      </div>
+      <div className={divStyle}>
+        <p className='font-semibold'>Break time</p>
+        <span className='text-gray-600'>{breakTime} seconds</span>
+      </div>
+    </>
   );
 }
